@@ -1,0 +1,29 @@
+name: "GitHub Apps for GITHUB_TOKEN"
+
+description: "Use GitHub Apps to create a new token and set it to an environment variable."
+
+inputs:
+  app_id:
+    required: false
+    default: ${{ secrets.APP_ID }}
+  private_key:
+    required: false
+    default: ${{ secrets.APP_PRIVATE_KEY }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Generate GitHub Apps token
+      id: GITHUB_TOKEN
+      uses: tibdex/github-app-token@v1
+      with:
+        app_id: ${{ inputs.APP_ID }}
+        private_key: ${{ inputs.APP_PRIVATE_KEY }}
+
+    - run: echo "APP_GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
+      env:
+        GITHUB_TOKEN: ${{ steps.GITHUB_TOKEN.outputs.token }}
+
+branding:
+  icon: "box"
+  color: "orange"
