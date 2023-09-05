@@ -1,0 +1,38 @@
+{
+  "name": "@akiojin/github-app-token-github-action",
+  "version": "0.0.0",
+  "description": "Use GitHub Apps to create a new token and set it to an environment variable.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm install",
+    "clean": "rimraf dist && rimraf node_modules && npm cache clean --force",
+    "dist-clean": "rimraf dist",
+    "release": "bash ./publish.sh",
+    "pre-release": "bash ./publish.sh prerelease",
+    "update": "bash ./update.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiojin/github-app-token-github-action.git"
+  },
+  "keywords": [
+    "checkout",
+    "Git",
+    "LFS",
+    "Git LFS"
+  ],
+  "author": "Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akiojin/github-app-token-github-action/issues"
+  },
+  "homepage": "https://github.com/akiojin/github-app-token-github-action#readme",
+  "devDependencies": {
+    "@commitlint/cli": "17.7.1",
+    "@commitlint/config-conventional": "17.7.0",
+    "@types/node": "20.5.8",
+    "husky": "8.0.3",
+    "rimraf": "5.0.1"
+  },
+  "private": true
+}
