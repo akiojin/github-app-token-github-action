@@ -4,9 +4,9 @@ description: "Use GitHub Apps to create a new token and set it to an environment
 
 inputs:
   app_id:
-    required: false
+    required: true
   private_key:
-    required: false
+    required: true
 
 runs:
   using: "composite"
@@ -15,8 +15,8 @@ runs:
       id: GITHUB_TOKEN
       uses: tibdex/github-app-token@v1
       with:
-        app_id: ${{ inputs.APP_ID || secrets.APP_ID }}
-        private_key: ${{ inputs.APP_PRIVATE_KEY || secrets.APP_PRIVATE_KEY }}
+        app_id: ${{ inputs.APP_ID }}
+        private_key: ${{ inputs.APP_PRIVATE_KEY }}
 
     - run: echo "APP_GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
       env:
