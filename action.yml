@@ -15,8 +15,8 @@ runs:
       id: GITHUB_TOKEN
       uses: tibdex/github-app-token@v1
       with:
-        app_id: ${{ inputs.app_id }}
-        private_key: ${{ inputs.private_key }}
+        app_id: ${{ inputs.app-id }}
+        private_key: ${{ inputs.private-key }}
 
     - run: |
         echo "APP_GITHUB_TOKEN=${{ steps.GITHUB_TOKEN.outputs.token }}" >> $GITHUB_ENV
