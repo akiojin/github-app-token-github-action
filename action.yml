@@ -18,9 +18,8 @@ runs:
         app_id: ${{ inputs.APP_ID }}
         private_key: ${{ inputs.APP_PRIVATE_KEY }}
 
-    - run: echo "APP_GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
-      env:
-        GITHUB_TOKEN: ${{ steps.GITHUB_TOKEN.outputs.token }}
+    - run: |
+      echo "APP_GITHUB_TOKEN=${{ steps.GITHUB_TOKEN.outputs.token }}" >> $GITHUB_ENV
 
 branding:
   icon: "box"
