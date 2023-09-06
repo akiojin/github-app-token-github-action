@@ -20,6 +20,7 @@ runs:
 
     - run: |
         echo "APP_GITHUB_TOKEN=${{ steps.GITHUB_TOKEN.outputs.token }}" >> $GITHUB_ENV
+      shell: bash
 
 branding:
   icon: "box"
