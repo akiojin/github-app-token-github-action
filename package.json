@@ -1,6 +1,6 @@
 {
   "name": "@akiojin/github-app-token-github-action",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Use GitHub Apps to create a new token and set it to an environment variable.",
   "main": "dist/index.js",
   "scripts": {
