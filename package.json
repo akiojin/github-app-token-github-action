@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/akiojin/github-app-token-github-action#readme",
   "devDependencies": {
-    "@types/node": "22.15.29",
+    "@types/node": "24.9.2",
     "rimraf": "6.1.0"
   },
   "private": true
